@@ -1,4 +1,4 @@
-package it.scompo.scompotagger.modules.filereader;
+package it.scompo.scompotagger.modules.songs;
 
 import java.util.LinkedHashMap;
 import java.util.Map;
@@ -87,6 +87,33 @@ public class Record{
 	 */
 	public void setYear(String year) {
 		Year = year;
+	}
+
+	/**
+	 * Gets the trackMap.
+	 *
+	 * @return the trackMap.
+	 */
+	public Map<Integer, Song> getTrackMap() {
+		return trackMap;
+	}
+
+	/**
+	 * Sets trackMap.
+	 *
+	 * @param trackMap the trackMap to set
+	 */
+	public void setTrackMap(Map<Integer, Song> trackMap) {
+		this.trackMap = trackMap;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Record [Name=" + Name + ", Author=" + Author + ", Year=" + Year
+				+ ", trackMap=" + trackMap + "]";
 	}
 	
 	

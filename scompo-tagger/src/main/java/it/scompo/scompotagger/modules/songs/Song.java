@@ -1,7 +1,7 @@
 /**
  * 
  */
-package it.scompo.scompotagger.modules.filereader;
+package it.scompo.scompotagger.modules.songs;
 
 /**
  * Implements a song.
@@ -9,11 +9,12 @@ package it.scompo.scompotagger.modules.filereader;
  * @author mscomparin
  * @version 1.0
  */
-public class Song {
+public class Song implements Comparable<Song>{
 	
 	private String name;
 	private Integer number;
 	private Integer length;
+	private Record record;
 	
 	/**
 	 * Creates a song
@@ -76,6 +77,40 @@ public class Song {
 	 */
 	public void setLength(Integer length) {
 		this.length = length;
+	}
+
+	/**
+	 * Gets the record.
+	 *
+	 * @return the record.
+	 */
+	public Record getRecord() {
+		return record;
+	}
+
+	/**
+	 * Sets record.
+	 *
+	 * @param record the record to set
+	 */
+	public void setRecord(Record record) {
+		this.record = record;
+	}
+
+	/* (non-Javadoc)
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Song [name=" + name + ", number=" + number + ", length="
+				+ length + "]";
+	}
+
+	/**
+	 * Sorts by length.
+	 */
+	public int compareTo(Song o) {
+		return this.length.compareTo(o.length);
 	}
 	
 	
